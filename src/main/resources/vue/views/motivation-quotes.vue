@@ -1,6 +1,6 @@
 <script>
 export default {
-name: "activity-profile"
+name: "motivation-quotes"
 }
 </script>
 
