@@ -1,4 +1,6 @@
 package ie.setu.domain
 
-class MotivationQuote {
-}
+data class MotivationQuote (
+val id: Int,
+val tips: String
+)

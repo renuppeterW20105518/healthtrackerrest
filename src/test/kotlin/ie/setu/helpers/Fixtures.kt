@@ -14,6 +14,10 @@ val validName = "Test User 1"
 val validEmail = "testuser1@test.com"
 val updatedName = "Updated Name"
 val updatedEmail = "Updated Email"
+val updatedDescription = "Updated Description"
+val updatedDuration = 0.00;
+val updatedCalories = -1;
+val updatedStarted = DateTime.parse("2023-12-27T14:45:11.087Z");
 
 val users = arrayListOf<User>(
     User(name = "Alice Wonderland", email = "alice@wonderland.com", id = 1),
@@ -31,16 +35,16 @@ val activities = arrayListOf<Activity>(
 fun populateUserTable(): UserDAO {
     SchemaUtils.create(Users)
     val userDAO = UserDAO()
-    userDAO.save(users.get(0))
-    userDAO.save(users.get(1))
-    userDAO.save(users.get(2))
+    userDAO.save(users[0])
+    userDAO.save(users[1])
+    userDAO.save(users[2])
     return userDAO
 }
 fun populateActivityTable(): ActivityDAO {
     SchemaUtils.create(Activities)
     val activityDAO = ActivityDAO()
-    activityDAO.save(activities.get(0))
-    activityDAO.save(activities.get(1))
-    activityDAO.save(activities.get(2))
+    activityDAO.save(activities[0])
+    activityDAO.save(activities[1])
+    activityDAO.save(activities[2])
     return activityDAO
 }

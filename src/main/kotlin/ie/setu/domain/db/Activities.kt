@@ -14,3 +14,4 @@ object Activities : Table("activities") {
     val started = datetime("started")
     val userId = integer("user_id").references(Users.id, onDelete = ReferenceOption.CASCADE)
 }
+

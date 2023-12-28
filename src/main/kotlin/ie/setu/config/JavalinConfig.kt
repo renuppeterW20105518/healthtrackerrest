@@ -8,7 +8,6 @@ import ie.setu.utils.jsonObjectMapper
 import io.javalin.vue.VueComponent
 
 class JavalinConfig {
-    fun startJavalinService(): Javalin {
         val app = Javalin.create{
             //added this jsonMapper for our integration tests - serialise objects to json
             it.jsonMapper(JavalinJackson(jsonObjectMapper()))
@@ -17,12 +16,18 @@ class JavalinConfig {
         }.apply {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.json("404 : Not Found") }
-        }.start(getRemoteAssignedPort())
-
+        }
+		
+    fun startJavalinService(): Javalin {	
+        app.start(getRemoteAssignedPort())
         registerRoutes(app)
         return app
     }
 
+	fun getJavalinService(): Javalin {
+        registerRoutes(app)
+        return app
+    }
     private fun getRemoteAssignedPort(): Int {
         val remotePort = System.getenv("PORT")
         return if (remotePort != null) {
@@ -58,7 +63,31 @@ class JavalinConfig {
                     patch(HealthTrackerController::updateActivity)
                 }
             }
-
+            path("/api/trainees"){
+                get(HealthTrackerController::getAllTrainees)
+                post(HealthTrackerController::addTrainee)
+                path("{trainee-id}") {
+                    delete(HealthTrackerController::deleteTrainee)
+                    patch(HealthTrackerController::updateTrainee)
+                }
+            }
+            path("/api/login"){
+                get(HealthTrackerController::getAllLogin)
+                path("{login-id}") {
+                    get(HealthTrackerController::getTraineeByLoginId)
+                }
+            }
+            path("/api/quote"){
+                post(HealthTrackerController::addQuote)
+                get(HealthTrackerController::getAllQuotes)
+                path("{quote-id}"){
+                    patch(HealthTrackerController::updateQuote)
+                    delete(HealthTrackerController::deleteQuote)
+                }
+            }
+            path("/api/quotes"){
+                get(HealthTrackerController::getAllQuotes)
+            }
             // The @routeComponent that we added in layout.html earlier will be replaced
             // by the String inside the VueComponent. This means a call to / will load
             // the layout and display our <home-page> component.
@@ -66,6 +95,13 @@ class JavalinConfig {
             get("/users", VueComponent("<user-overview></user-overview>"))
             get("/users/{user-id}", VueComponent("<user-profile></user-profile>"))
             get("/users/{user-id}/activities", VueComponent("<user-activity-overview></user-activity-overview>"))
+            get("/activities", VueComponent("<activity-overview></activity-overview>"))
+            get("/activities/{activity-id}", VueComponent("<activity-profile></activity-profile>"))
+            get("/fitness-page", VueComponent("<fitness-page></fitness-page>"))
+            get("/trainees/{trainee-id}", VueComponent("<trainees></trainees>"))
+            get("/cart", VueComponent("<cart></cart>"))
+            get("/quote", VueComponent("<motivation-quotes></motivation-quotes>"))
+            get("/fitness-center-registration", VueComponent("<fitness-center-registration></fitness-center-registration>"))
         }
     }
 }

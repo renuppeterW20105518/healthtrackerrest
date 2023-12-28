@@ -1,5 +1,5 @@
 <template id="user-profile">
-  <application-layout>
+  <app-layout>
     <div v-if="noUserFound">
       <p> We're sorry, we were not able to retrieve this user.</p>
       <p> View <a :href="'/users'">all users</a>.</p>
@@ -28,14 +28,14 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="input-user-id">User ID</span>
         </div>
-        <input class="form-control" v-model="user.id" name="id" type="number" readonly placeholder="User ID"/>
+        <input class="form-control" v-model="user.id" name="id" type="number" readonly placeholder="User ID"/> 
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="input-user-name">User Name</span>
         </div>
-        <input class="form-control" v-model="user.name" name="username" type="text" placeholder="User Name"/>
+        <input class="form-control" v-model="user.name" name="name" type="text" placeholder="User Name"/>
       </div>
 
       <div class="input-group mb-3">
@@ -56,7 +56,7 @@
       </ul>
     </div>
   </div>
-    </application-layout>
+    </app-layout>
 </template>
 
 <script>
@@ -97,6 +97,7 @@ app.component("user-profile", {
             console.log(error)
           })
       alert("User updated!")
+      window.location.href = '/';
     },
     deleteUser: function () {
       if (confirm("Do you really want to delete?")) {
@@ -106,7 +107,7 @@ app.component("user-profile", {
             .then(response => {
               alert("User deleted")
               //display the /users endpoint
-              window.location.href = '/users';
+              window.location.href = '/';
             })
             .catch(function (error) {
               console.log(error)

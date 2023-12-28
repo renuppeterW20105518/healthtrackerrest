@@ -3,16 +3,20 @@ package ie.setu.config
 import org.jetbrains.exposed.sql.Database
 import mu.KotlinLogging
 import org.jetbrains.exposed.sql.name
+
 class DbConfig{
 
     private val logger = KotlinLogging.logger {}
+
     fun getDbConnection() :Database{
 
-        val PGHOST = "tyke.db.elephantsql.com"
+		logger.info{"Starting DB Connection..."}
+
+        val PGHOST = "trumpet.db.elephantsql.com"
         val PGPORT = "5432"
-        val PGUSER = "aikzysjn"
-        val PGPASSWORD = "ppl9ft4Suk-nJKpGY1DobJrjpEP7eVDi"
-        val PGDATABASE = "aikzysjn"
+        val PGUSER = "csdicsau"
+        val PGPASSWORD = "KxRJaRJKBoeEaoWn2ktiQLTqVw4Tkc_2"
+        val PGDATABASE = "csdicsau"
 
         //url format should be jdbc:postgresql://host:port/database
         val dbUrl = "jdbc:postgresql://$PGHOST:$PGPORT/$PGDATABASE"

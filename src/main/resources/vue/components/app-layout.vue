@@ -1,5 +1,5 @@
-<template id="application-layout">
-  <div class="application-layout">
+<template id="app-layout">
+  <div class="app-layout">
     <div class="container">
       <!-- Start of navbar -->
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -18,12 +18,35 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/activities">
-                Activities<span class="sr-only">(current)</span>
-              </a>
+              <a class="nav-link" href="/activities">Activities</a>
             </li>
           </ul>
         </div>
+
+        <div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">Cart</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/fitness-page" >Fitness Center</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/fitness-center-registration" >Registration</a>
+            </li>
+          </ul>
+        </div>
+
       </nav>
       <!--End of nav bar-->
       <!--Start of main content area-->
@@ -38,7 +61,7 @@
 </template>
 
 <script>
-app.component("application-layout", {template: "#application-layout"});
+app.component("app-layout", {template: "#app-layout"});
 </script>
 
 <style>

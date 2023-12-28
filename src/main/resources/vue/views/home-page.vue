@@ -1,6 +1,6 @@
 <!-- the "home-page" element is passed as a parameter to VueComponent in the JavalinConfig file -->
 <template id="home-page">
-  <application-layout>
+  <app-layout>
     <div class="row">
       <div class="col">
         <div class="card">
@@ -20,8 +20,17 @@
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Healthy Tips</h5>
+          <div class="card-body">
+            <h5 class="card-title">{{motivations.length}} Quotes</h5>
+            <a href="/quote" class="btn btn-primary">More Details...</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </application-layout>
+  </app-layout>
 </template>
 
 <script>
@@ -30,7 +39,8 @@ app.component('home-page',
       template: "#home-page",
       data: () => ({
         users: [],
-        activities: []
+        activities: [],
+        motivations: [],
       }),
       created() {
         axios.get("/api/users")
@@ -38,6 +48,9 @@ app.component('home-page',
             .catch(() => alert("Error while fetching users"));
         axios.get("/api/activities")
             .then(res => this.activities = res.data)
+            .catch(() => alert("Error while fetching activities"));
+        axios.get("/api/quote")
+            .then(res => this.motivations = res.data)
             .catch(() => alert("Error while fetching activities"));
       }
     });

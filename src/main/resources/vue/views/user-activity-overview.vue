@@ -1,5 +1,5 @@
 <template id="user-activity-overview">
-  <application-layout>
+  <app-layout>
   <div>
     <h3>Activities list </h3>
     <ul>
@@ -8,7 +8,7 @@
       </li>
     </ul>
   </div>
-    </application-layout>
+    </app-layout>
 </template>
 
 <script>
