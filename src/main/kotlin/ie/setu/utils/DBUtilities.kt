@@ -1,11 +1,8 @@
 package ie.setu.utils
 
-import ie.setu.domain.User
-import org.jetbrains.exposed.sql.ResultRow
-import ie.setu.domain.Activity
-import ie.setu.domain.Trainee
+import ie.setu.domain.*
 import ie.setu.domain.Login
-import ie.setu.domain.MotivationQuote
+import org.jetbrains.exposed.sql.ResultRow
 import ie.setu.domain.db.*
 
 fun mapToUser(it: ResultRow) = User(
@@ -53,7 +50,16 @@ fun mapToLogin(it: ResultRow) = Login(
     createddate = it[Logins.createddate]
 )
 
-fun mapToMotivationQuote(it:ResultRow) = MotivationQuote(
-    id = it[MotivationQuotes.id],
-    quotes = it[MotivationQuotes.quotes]
+fun mapToHealthyTip(it:ResultRow) = HealthyTip(
+    id = it[HealthyTips.id],
+    tips = it[HealthyTips.tips]
+)
+
+fun mapToBmi(it: ResultRow) = Bmi(
+    id = it[Bmies.id],
+    weight = it[Bmies.weight],
+    height = it[Bmies.height],
+    bmiCalculator = it[Bmies.bmiCalculator],
+    timestamp = it[Bmies.timestamp],
+    userId = it[Bmies.userId]
 )

@@ -1,10 +1,7 @@
 package ie.setu.controllers
 
-import ie.setu.domain.User
+import ie.setu.domain.*
 import io.javalin.http.Context
-import ie.setu.domain.Activity
-import ie.setu.domain.MotivationQuote
-import ie.setu.domain.Trainee
 import ie.setu.domain.repository.*
 import ie.setu.utils.jsonToObject
 
@@ -14,7 +11,7 @@ object HealthTrackerController {
     private val activityDAO = ActivityDAO()
     private val traineeDAO = TraineeDAO()
     private val loginDAO = LoginDAO()
-    private val motivationQuoteDAO = MotivationQuoteDAO()
+    private val healthytipDAO = HealthyTipDAO()
 
     //--------------------------------------------------------------
     // UserDAO specifics
@@ -159,7 +156,7 @@ object HealthTrackerController {
 
 
     //--------------------------------------------------------------
-    // FitnessDAO specifics
+    // TraineeDAO specifics
     //-------------------------------------------------------------
     fun addTrainee(ctx: Context) {
         val trainee : Trainee = jsonToObject(ctx.body())
@@ -219,38 +216,42 @@ object HealthTrackerController {
         }
     }
 
-    fun getAllQuotes(ctx: Context) {
-        val quote = motivationQuoteDAO.getAllquotes()
-        if (quote.size != 0) {
+    //--------------------------------------------------------------
+    // MotivationDAO specifics
+    //-------------------------------------------------------------
+
+    fun getAllTips(ctx: Context) {
+        val tip = healthytipDAO.getAllTips()
+        if (tip.size != 0) {
             ctx.status(200)
         }
         else{
             ctx.status(404)
         }
-        ctx.json(quote)
+        ctx.json(tip)
     }
 
-    fun updateQuote(ctx: Context)
+    fun updateTip(ctx: Context)
     {
-        val foundQuote: MotivationQuote = jsonToObject(ctx.body())
-        if((motivationQuoteDAO.update(id = ctx.pathParam("quote-id").toInt(), quote = foundQuote)) != 0){
+        val foundTip: HealthyTip = jsonToObject(ctx.body())
+        if((healthytipDAO.update(id = ctx.pathParam("tip-id").toInt(), tip = foundTip)) != 0){
             ctx.status(204)
         } else
             ctx.status(404)
     }
 
-    fun deleteQuote(ctx:Context){
-        if(motivationQuoteDAO.delete(ctx.pathParam("quote-id").toInt()) != 0)
+    fun deleteTip(ctx:Context){
+        if(healthytipDAO.delete(ctx.pathParam("tip-id").toInt()) != 0)
             ctx.status(204)
         else
             ctx.status(404)
     }
 
-    fun addQuote(ctx: Context){
-        val quotes: MotivationQuote = jsonToObject(ctx.body())
-        val quoteId = motivationQuoteDAO.save(quotes)
-        if (quoteId != null){
-            ctx.json(quotes)
+    fun addTip(ctx: Context){
+        val tips: HealthyTip = jsonToObject(ctx.body())
+        val tipId = healthytipDAO.save(tips)
+        if (tipId != null){
+            ctx.json(tips)
             ctx.status(201)
         }
     }

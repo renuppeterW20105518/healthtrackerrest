@@ -1,0 +1,18 @@
+Index: src/main/kotlin/ie/setu/utils/DBUtilities.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ie.setu.utils\r\n\r\nimport ie.setu.domain.User\r\nimport ie.setu.domain.db.Users\r\nimport org.jetbrains.exposed.sql.ResultRow\r\nimport ie.setu.domain.Activity\r\nimport ie.setu.domain.db.Activities\r\n\r\nfun mapToUser(it: ResultRow) = User(\r\n    id = it[Users.id],\r\n    name = it[Users.name],\r\n    email = it[Users.email]\r\n)\r\n\r\nfun mapToActivity(it: ResultRow) = Activity(\r\n    id = it[Activities.id],\r\n    description = it[Activities.description],\r\n    duration = it[Activities.duration],\r\n    started = it[Activities.started],\r\n    calories = it[Activities.calories],\r\n    userId = it[Activities.userId]\r\n)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/ie/setu/utils/DBUtilities.kt b/src/main/kotlin/ie/setu/utils/DBUtilities.kt
+--- a/src/main/kotlin/ie/setu/utils/DBUtilities.kt	(revision b4f01eb955be4947e58aa1507292e87fa5b0a3a9)
++++ b/src/main/kotlin/ie/setu/utils/DBUtilities.kt	(date 1703806868337)
+@@ -19,4 +19,5 @@
+     started = it[Activities.started],
+     calories = it[Activities.calories],
+     userId = it[Activities.userId]
+-)
+\ No newline at end of file
++)
++
