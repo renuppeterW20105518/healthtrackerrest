@@ -1,5 +1,6 @@
 package ie.setu.config
 
+import ie.setu.controllers.BMIController
 import io.javalin.Javalin
 import ie.setu.controllers.HealthTrackerController
 import io.javalin.apibuilder.ApiBuilder.*
@@ -44,7 +45,9 @@ class JavalinConfig {
                     get(HealthTrackerController::getUserByUserId)
                     delete(HealthTrackerController::deleteUser)
                     patch(HealthTrackerController::updateUser)
-                    //The overall path is: "/api/users/:user-id/activities"
+                    path("bmi") {
+                        get(BMIController::getBmiByUserId)
+                        delete(BMIController::deleteBmiByUserId)//The overall path is: "/api/users/:user-id/activities"
                     path("activities"){
                         get(HealthTrackerController::getActivitiesByUserId)
                         delete(HealthTrackerController::deleteActivityByUserId)
@@ -77,17 +80,23 @@ class JavalinConfig {
                     get(HealthTrackerController::getTraineeByLoginId)
                 }
             }
-            path("/api/quote"){
-                post(HealthTrackerController::addQuote)
-                get(HealthTrackerController::getAllQuotes)
-                path("{quote-id}"){
-                    patch(HealthTrackerController::updateQuote)
-                    delete(HealthTrackerController::deleteQuote)
+            path("/api/tip"){
+                post(HealthTrackerController::addTip)
+                get(HealthTrackerController::getAllTips)
+                path("{tip-id}"){
+                    patch(HealthTrackerController::updateTip)
+                    delete(HealthTrackerController::deleteTip)
                 }
             }
-            path("/api/quotes"){
-                get(HealthTrackerController::getAllQuotes)
+            path("/api/bmi"){
+                get(BMIController::getAllBmi)
+                post(BMIController::calculateBmi)
+                path("{bmi-id}"){
+                    delete(BMIController::deleteBmiId)
+                }
             }
+            }
+
             // The @routeComponent that we added in layout.html earlier will be replaced
             // by the String inside the VueComponent. This means a call to / will load
             // the layout and display our <home-page> component.
@@ -95,12 +104,13 @@ class JavalinConfig {
             get("/users", VueComponent("<user-overview></user-overview>"))
             get("/users/{user-id}", VueComponent("<user-profile></user-profile>"))
             get("/users/{user-id}/activities", VueComponent("<user-activity-overview></user-activity-overview>"))
+            get("/users/{user-id}/bmi", VueComponent("<user-bmi-overview></user-bmi-overview>"))
             get("/activities", VueComponent("<activity-overview></activity-overview>"))
             get("/activities/{activity-id}", VueComponent("<activity-profile></activity-profile>"))
             get("/fitness-page", VueComponent("<fitness-page></fitness-page>"))
             get("/trainees/{trainee-id}", VueComponent("<trainees></trainees>"))
             get("/cart", VueComponent("<cart></cart>"))
-            get("/quote", VueComponent("<motivation-quotes></motivation-quotes>"))
+            get("/tip", VueComponent("<healthy-tips></healthy-tips>"))
             get("/fitness-center-registration", VueComponent("<fitness-center-registration></fitness-center-registration>"))
         }
     }

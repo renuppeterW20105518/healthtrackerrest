@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: com.konghq:unirest-java:standalone:3.14.1" type="java-imported" external-system-id="Maven">
+    <properties groupId="com.konghq" artifactId="unirest-java" version="3.14.1" classifier="standalone" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/konghq/unirest-java/3.14.1/unirest-java-3.14.1-standalone.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/konghq/unirest-java/3.14.1/unirest-java-3.14.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/konghq/unirest-java/3.14.1/unirest-java-3.14.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -53,6 +53,9 @@
         <li v-for="activity in activities">
           {{ activity.description }} for {{ activity.duration }} minutes
         </li>
+        <li>
+          <a :href="`/users/${user.id}/bmi`" class="card card-body">User BMI</a>
+        </li>
       </ul>
     </div>
   </div>

@@ -22,10 +22,10 @@
       </div>
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Motivation Quotes</h5>
+          <h5 class="card-header">Healthy Tips</h5>
           <div class="card-body">
-            <h5 class="card-title">{{motivations.length}} Quotes</h5>
-            <a href="/quote" class="btn btn-primary">More Details...</a>
+            <h5 class="card-title">Tips</h5>
+            <a href="/tip" class="btn btn-primary">More Details...</a>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ app.component('home-page',
         axios.get("/api/activities")
             .then(res => this.activities = res.data)
             .catch(() => alert("Error while fetching activities"));
-        axios.get("/api/quote")
+        axios.get("/api/tip")
             .then(res => this.motivations = res.data)
             .catch(() => alert("Error while fetching activities"));
       }

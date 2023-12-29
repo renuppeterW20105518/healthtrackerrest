@@ -2,7 +2,7 @@
   <app-layout>
   <div class="fitness-center-registration">
     <h2>Registration Form</h2>
-    <form @submit.prevent="submitForm" class="registration-form">
+    <form class="registration-form">
       <label for="username">Username:</label>
       <input type="text" id="username" v-model="username" required />
       <label for="password">Password:</label>
