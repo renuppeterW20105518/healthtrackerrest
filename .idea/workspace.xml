@@ -5,48 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9dd673a-1a05-49f8-94f2-07bd57b304d4" name="Changes" comment="Commit with all features">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/BMIController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/Bmi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/Bmies.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/BmiDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vue/views/user-bmi-overview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/MotivationQuote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/HealthyTip.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/MotivationQuotes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/HealthyTips.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/MotivationQuoteDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/HealthyTipDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vue/views/home-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vue/views/home-page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vue/views/motivation-quotes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vue/views/healthy-tips.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/vue/views/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vue/views/user-profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$getDbConnection$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$logger$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig$logger$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/DbConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/JavalinConfig$app$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/JavalinConfig$app$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/config/JavalinConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/config/JavalinConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/controllers/HealthTrackerController$addQuote$$inlined$jsonToObject$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/controllers/HealthTrackerController$updateQuote$$inlined$jsonToObject$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/controllers/HealthTrackerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/controllers/HealthTrackerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/MotivationQuote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/db/MotivationQuotes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$delete$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$delete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$getAllquotes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$getRandom$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$getRandom$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$save$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$save$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$update$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$update$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO$update$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/domain/repository/MotivationQuoteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ie/setu/utils/DBUtilitiesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ie/setu/utils/DBUtilitiesKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vue/views/fitness-center-registration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vue/views/fitness-center-registration.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vue/views/home-page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vue/views/home-page.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vue/views/motivation-quotes.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vue/views/user-profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vue/views/user-profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/HealthyTips.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/HealthyTips.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vue/views/healthy-tips.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vue/views/healthy-tips.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,32 +52,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "healthtracker__V1",
-    "last_opened_file_path": "C:/Users/SONY/Downloads/healthtracker-master-divya",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "profiler.jvm",
-    "ts.external.directory.path": "C:\\dev\\IntelliJ IDEA 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;healthtracker__V1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SETU/agile-workspace/Project 2/healthtrackerrest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;profiler.jvm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\IntelliJ IDEA 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Options API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Options API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SETU\agile-workspace\Project 2\healthtrackerrest\src" />
@@ -216,6 +178,10 @@
       <workItem from="1703759080877" duration="27631000" />
       <workItem from="1703805873245" duration="247000" />
       <workItem from="1703806247686" duration="20400000" />
+      <workItem from="1703831513189" duration="272000" />
+      <workItem from="1703875591799" duration="744000" />
+      <workItem from="1703943741401" duration="1268000" />
+      <workItem from="1703972938746" duration="4180000" />
     </task>
     <task id="LOCAL-00001" summary="Completed the lab5">
       <option name="closed" value="true" />
@@ -233,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702773605880</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit with all features">
+      <option name="closed" value="true" />
+      <created>1703831560390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703831560390</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,22 +233,40 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt</url>
-          <line>19</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilities.kt</url>
+          <line>53</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt</url>
-          <line>82</line>
-          <option name="timeStamp" value="19" />
+          <line>223</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt</url>
-          <line>24</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt</url>
+          <line>49</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/BMIController.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/BmiDAO.kt</url>
+          <line>36</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="handler" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

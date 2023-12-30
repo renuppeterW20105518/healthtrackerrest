@@ -9,26 +9,27 @@ import ie.setu.utils.jsonObjectMapper
 import io.javalin.vue.VueComponent
 
 class JavalinConfig {
-        val app = Javalin.create{
-            //added this jsonMapper for our integration tests - serialise objects to json
-            it.jsonMapper(JavalinJackson(jsonObjectMapper()))
-            it.staticFiles.enableWebjars()
-            it.vue.vueAppName = "app" // only required for Vue 3, is defined in layout.html
-        }.apply {
-            exception(Exception::class.java) { e, _ -> e.printStackTrace() }
-            error(404) { ctx -> ctx.json("404 : Not Found") }
-        }
-		
-    fun startJavalinService(): Javalin {	
+    val app = Javalin.create {
+        //added this jsonMapper for our integration tests - serialise objects to json
+        it.jsonMapper(JavalinJackson(jsonObjectMapper()))
+        it.staticFiles.enableWebjars()
+        it.vue.vueAppName = "app" // only required for Vue 3, is defined in layout.html
+    }.apply {
+        exception(Exception::class.java) { e, _ -> e.printStackTrace() }
+        error(404) { ctx -> ctx.json("404 : Not Found") }
+    }
+
+    fun startJavalinService(): Javalin {
         app.start(getRemoteAssignedPort())
         registerRoutes(app)
         return app
     }
 
-	fun getJavalinService(): Javalin {
+    fun getJavalinService(): Javalin {
         registerRoutes(app)
         return app
     }
+
     private fun getRemoteAssignedPort(): Int {
         val remotePort = System.getenv("PORT")
         return if (remotePort != null) {
@@ -41,19 +42,20 @@ class JavalinConfig {
             path("/api/users") {
                 get(HealthTrackerController::getAllUsers)
                 post(HealthTrackerController::addUser)
-                path("{user-id}"){
+                path("{user-id}") {
                     get(HealthTrackerController::getUserByUserId)
                     delete(HealthTrackerController::deleteUser)
                     patch(HealthTrackerController::updateUser)
                     path("bmi") {
                         get(BMIController::getBmiByUserId)
-                        delete(BMIController::deleteBmiByUserId)//The overall path is: "/api/users/:user-id/activities"
-                    path("activities"){
+                        delete(BMIController::deleteBmiByUserId)
+                    }
+                    path("activities") {
                         get(HealthTrackerController::getActivitiesByUserId)
                         delete(HealthTrackerController::deleteActivityByUserId)
                     }
                 }
-                path("/email/{email}"){
+                path("/email/{email}") {
                     get(HealthTrackerController::getUserByEmail)
                 }
             }
@@ -66,7 +68,7 @@ class JavalinConfig {
                     patch(HealthTrackerController::updateActivity)
                 }
             }
-            path("/api/trainees"){
+            path("/api/trainees") {
                 get(HealthTrackerController::getAllTrainees)
                 post(HealthTrackerController::addTrainee)
                 path("{trainee-id}") {
@@ -74,27 +76,26 @@ class JavalinConfig {
                     patch(HealthTrackerController::updateTrainee)
                 }
             }
-            path("/api/login"){
+            path("/api/login") {
                 get(HealthTrackerController::getAllLogin)
                 path("{login-id}") {
                     get(HealthTrackerController::getTraineeByLoginId)
                 }
             }
-            path("/api/tip"){
+            path("/api/tip") {
                 post(HealthTrackerController::addTip)
                 get(HealthTrackerController::getAllTips)
-                path("{tip-id}"){
+                path("{tip-id}") {
                     patch(HealthTrackerController::updateTip)
                     delete(HealthTrackerController::deleteTip)
                 }
             }
-            path("/api/bmi"){
+            path("/api/bmi") {
                 get(BMIController::getAllBmi)
                 post(BMIController::calculateBmi)
-                path("{bmi-id}"){
+                path("{bmi-id}") {
                     delete(BMIController::deleteBmiId)
                 }
-            }
             }
 
             // The @routeComponent that we added in layout.html earlier will be replaced
@@ -111,7 +112,10 @@ class JavalinConfig {
             get("/trainees/{trainee-id}", VueComponent("<trainees></trainees>"))
             get("/cart", VueComponent("<cart></cart>"))
             get("/tip", VueComponent("<healthy-tips></healthy-tips>"))
-            get("/fitness-center-registration", VueComponent("<fitness-center-registration></fitness-center-registration>"))
+            get(
+                "/fitness-center-registration",
+                VueComponent("<fitness-center-registration></fitness-center-registration>")
+            )
         }
     }
 }
