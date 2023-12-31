@@ -217,7 +217,7 @@ object HealthTrackerController {
     }
 
     //--------------------------------------------------------------
-    // MotivationDAO specifics
+    // Healthy TipDAO specifics
     //-------------------------------------------------------------
 
     fun getAllTips(ctx: Context) {

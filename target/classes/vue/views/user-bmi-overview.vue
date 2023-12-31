@@ -19,7 +19,7 @@
         <form>
           <div class="form-row">
             <div class="form-group col-md-4" style="display: none">
-              <input type="hidden" class="form-control" v-model="userId" name="id" readonly placeholder="Id"/>
+              <input type="hidden" class="form-control" v-model="user_id" name="user_id" readonly placeholder="user_id"/>
             </div>
             <div class="form-group col-md-4">
               <label for="inputweight">Weight ( kg )</label>
@@ -30,7 +30,7 @@
               <input type="text" class="form-control"  v-model="formData.height" name="height" placeholder="Height ( cm )"/>
             </div>
             <div class="form-group col-md-4">
-              <button @click="findbmiCalculator()" class="btn btn-primary">
+              <button @click="findbmiCalculator" class="btn btn-primary">
                 <i class="fas fa-calculator"></i>
               </button>
             </div>
@@ -109,7 +109,6 @@ app.component("user-bmi-overview", {
             bmiCalculator:bmiCalculator,
             timestamp:new Date().toISOString(),
             userId: userId,
-
           })
           .then(response => {
             this.bmi.push(response.data)

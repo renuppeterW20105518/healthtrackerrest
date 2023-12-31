@@ -3,10 +3,9 @@
     <div>
       <h3>Health Tip</h3>
       <ul>
-<!--        <li v-for="healthytip in healthytips">-->
-<!--          {{healthytip.id}}: {{healthytip.tips}}-->
-<!--        </li>-->
-
+        <li v-for="healthytip in healthytips">
+          {{healthytip.id}}: {{healthytip.tips}}
+        </li>
       </ul>
       <div class="col" align="centre">
         <button rel="tooltip" title="Refresh"
@@ -23,21 +22,21 @@
 app.component("healthy-tips", {
   template: "#healthy-tips",
   data: () => ({
-    healthtips: [],
+    healthytips: [],
   }),
   created() {
-    this.fetchRandomTip();
+    this.fetchHealthTips();
   },
   methods: {
     fetchHealthTips: function () {
       axios.get("/api/tip")
           .then(res => {
             console.log("Response from server:", res);
-            this.healthtips = res.data;
+            this.healthytips = res.data;
           })
           .catch(error => {
-            console.error("Error while fetching motivation tips:", error);
-            alert("Error while fetching motivation tips");
+            console.error("Error while fetching healthy tips:", error);
+            alert("Error while fetching healthy tips");
           });
     },
     fetchRandomTip: function () {
